@@ -78,6 +78,11 @@ body {
     text-decoration: underline;
 }
 
+.publication-authors a:hover {
+    font-weight: bold; /* Make text bold on hover */
+    text-decoration: none; /* Optional: Remove underline on hover */
+}
+
 .author-block {
   display: inline-block;
 }
