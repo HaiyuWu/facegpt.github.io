@@ -201,26 +201,19 @@
                             Performance at Each Step</h1>
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
-                                <a href="https://github.com/RockeyCoss">Zhanhao Liang</a>&nbsp&nbsp&nbsp
+                                <a href="https://github.com/HaiyuWu">Haiyu Wu</a>&nbsp&nbsp&nbsp
                             </span>
                             <span class="author-block">
-                                <a href="https://www.microsoft.com/en-us/research/people/yuyua/">Yuhui
-                                    Yuan</a><sup></sup>&nbsp&nbsp&nbsp
+                                <a href="https://1jsingh.github.io/">Jaskirat Singh</a><sup></sup>&nbsp&nbsp&nbsp
                             </span>
                             <span class="author-block">
-                                <a href="https://cientgu.github.io">Shuyang Gu</a><sup></sup>&nbsp&nbsp&nbsp
-                            </span>
-                            <span class="author-block">
-                                <a href="https://github.com/BHCHENGIT">Bohan Chen</a><sup></sup>&nbsp&nbsp&nbsp
-                            </span>
-                            <span class="author-block">
-                                <a href="https://tiankaihang.github.io/">Tiankai Hang</a><sup></sup>&nbsp&nbsp&nbsp
-                            </span>
-                            <span class="author-block">
-                                <a href="https://sites.google.com/a/usc.edu/jili/">Ji Li</a><sup></sup>&nbsp&nbsp&nbsp
+                                <a href="https://github.com/sicongT">Sicong Tian</a><sup></sup>&nbsp&nbsp&nbsp
                             </span>
                             <span class="author-block">
                                 <a href="https://zheng-lab.cecs.anu.edu.au/">Liang Zheng</a><sup></sup>
+                            </span>
+                            <span class="author-block">
+                                <a href="https://www3.nd.edu/~kwb/">Kevin W. Bowyer</a><sup></sup>&nbsp&nbsp&nbsp
                             </span>
                             <!-- <br>
             <span class="is-size-6 publication-authors">
@@ -235,12 +228,9 @@
                         </div>
 
                         <div class="is-size-5 publication-authors">
-                            <span class="author-block"><sup> </sup>The Australian National
-                                University&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
-                            <span class="author-block"><sup> </sup>The University of
-                                Liverpool&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
-                            <span class="author-block"><sup> </sup>Southeast University</span>
-                            <span class="author-block"><sup> </sup>Microsoft Research Asia</span>
+                            <span class="author-block"><sup> </sup>University of Notre Dame&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                            <span class="author-block"><sup> </sup>The Australian National University&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                            <span class="author-block"><sup> </sup>Indiana University South Bend</span>
                         </div>
 
                         <div class="column has-text-centered">
@@ -415,30 +405,35 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            Recently, Direct Preference Optimization (DPO) has extended its success from aligning large
-                            language models (LLMs) to aligning text-to-image diffusion models with human preferences.
-                            Unlike most existing DPO methods that assume all diffusion steps share a consistent
-                            preference order with the final generated images, we argue that this assumption neglects
-                            step-specific denoising performance and that preference labels should be tailored to each
-                            step's contribution.
+                            This paper studies how to synthesize face images that allow for effective training of face
+                            recognition models, in response to legal constraints in this field. To synthesize such
+                            training data, identity generation and facial attribute augmentation are two useful
+                            strategies to increase inter-class separability and increase intra-class variations, two
+                            beneficial factors widely acknowledged by the community. However, existing works 1) are
+                            typically limited in generating well separable different identities and 2) either neglect or
+                            use a separate editing model for attribute augmentation.
+
                         </p>
                         <p>
-                            To address this limitation, we propose Step-aware Preference Optimization (SPO), a novel
-                            post-training approach that independently evaluates and adjusts the denoising performance at
-                            each step, using a <em>step-aware preference model</em> and a <em>step-wise resampler</em>
-                            to ensure accurate step-aware supervision.
-                            Specifically, at each denoising step, we sample a pool of images, find a suitable win-lose
-                            pair, and, most importantly, randomly select a single image from the pool to initialize the
-                            next denoising step. This step-wise resampler process ensures the next win-lose image pair
-                            comes from the same image, making the win-lose comparison independent of the previous step.
-                            To assess the preferences at each step, we train a separate step-aware preference model that
-                            can be applied to both noisy and clean images.
+                            In this work, we propose Vec2Face, a single model that only uses a vector as input and can
+                            flexibly generate and control face images and their attributes. Composed of a modified
+                            masked autoencoder and an image decoder, Vec2Face is supervised by face image reconstruction
+                            and can be conveniently used in inference. Specifically, using vectors with low similarities
+                            among themselves as inputs, Vec2Face generates well-separable identities; randomly
+                            perturbing an input vector within a reasonable range allows Vec2Face to generate faces of
+                            the same identity but with robust variations in face attributes; it is also possible to
+                            generate images with designated attribute by adjusting vector values with a gradient descent
+                            based method. Therefore, high inter-class separability and intra-class variations are
+                            achieved using a single model.
+
                         </p>
                         <p>
-                            Our experiments with Stable Diffusion v1.5 and SDXL demonstrate that SPO significantly
-                            outperforms the latest Diffusion-DPO in aligning generated images with complex, detailed
-                            prompts and enhancing aesthetics, while also achieving more than 20&times; times faster in
-                            training efficiency.
+                            Vec2Face allows us to efficiently synthesize as many as 200K identities with 10 million
+                            images without observing the accuracy saturation. Face recognition models trained with the
+                            resulting datasets achieve the state-of-the-art performance, with the accuracy on CALFW test
+                            set being the first higher than the same-scale real dataset.
+                            Code link: \url{https://haiyuwu.github.io/facegpt.github.io/}
+
                         </p>
                     </div>
                 </div>
