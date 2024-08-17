@@ -107,13 +107,17 @@
 
 
 
-        .column.is-2.has-text-centered img.interpolation-image {
+        .column.is-2.has-text-centered {
+            padding: 2px;
+            margin-left: 0;
+            margin-right: 0;
+        }
 
+        .column.is-2.has-text-centered img.interpolation-image {
             object-fit: cover;
             border-radius: 10px;
             transition: opacity 0.5s ease;
             object-position: center;
-            /* 新增加的代码，让图片居中 */
         }
 
         .column.is-2.has-text-centered:hover img.interpolation-image {
@@ -130,12 +134,9 @@
             color: white;
             display: flex;
             align-items: center;
-            /* 垂直居中 */
             justify-content: center;
-            /* 水平居中 */
             font-family: 'Comic Sans MS', 'Verdana', 'Tahoma', sans-serif;
             text-align: center;
-            /* 让文本在其容器中水平居中 */
             opacity: 0;
             transition: opacity 0.5s ease;
         }
