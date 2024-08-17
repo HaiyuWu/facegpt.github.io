@@ -43,7 +43,7 @@
 
     <style>
         .publication-title {
-            font-family: "textsc "
+            font-family: "textsc";
         }
 
         video {
@@ -60,25 +60,19 @@
 
         .image_container {
             border-radius: 10px;
-            /*设置图片的圆角，可以根据你的需求调整这个值*/
-            /*margin: 10px; !* 在图片的外部元素上设置间距 *!*/
             overflow: hidden;
-            /* 为了保持图片的圆角效果 */
             position: relative;
             width: 100%;
-
             padding-bottom: 100%;
+            margin: 1px; /* Reduce the margin to 1px to minimize the gap between images */
         }
 
         .image_container img {
-
             position: absolute;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* 这会使图片保持原始比例，但仍然填充其容器 */
             object-position: center;
-            /* 新增加的代码，让图片居中 */
         }
 
         .caption {
@@ -91,12 +85,9 @@
             color: white;
             display: flex;
             align-items: center;
-            /* 垂直居中 */
             justify-content: center;
-            /* 水平居中 */
             font-family: 'Comic Sans MS', 'Verdana', 'Tahoma', sans-serif;
             text-align: center;
-            /* 让文本在其容器中水平居中 */
             opacity: 0;
             transition: opacity 0.5s ease;
         }
@@ -105,12 +96,9 @@
             opacity: 1;
         }
 
-
-
         .column.is-2.has-text-centered {
-            padding: 2px;
-            margin-left: 0;
-            margin-right: 0;
+            padding: 1px; /* Reduce padding to 1px */
+            margin: 0; /* Remove any margin between columns */
         }
 
         .column.is-2.has-text-centered img.interpolation-image {
@@ -124,38 +112,9 @@
             opacity: 0.5;
         }
 
-        .column.is-2.has-text-centered .caption {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Comic Sans MS', 'Verdana', 'Tahoma', sans-serif;
-            text-align: center;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .column.is-2.has-text-centered:hover .caption {
-            opacity: 1;
-        }
-
-        .columns.is-centered {
-            margin-left: 0;
-            margin-right: 0;
-            justify-content: center;
-        }
-
         .columns.is-centered img {
             margin-bottom: 20px;
-            /* 或者你想要的任何值 */
         }
-
 
         .section {
             margin: 3px;
@@ -195,6 +154,7 @@
             text-decoration: underline;
         }
     </style>
+
 
     <!--<h1 class="title is-1 publication-title">COLE :A Hierarchical Generation Framework for Graphic Design</h1>-->
 
@@ -781,208 +741,253 @@
         <br>
 
         <h2 class="title is-3" style="text-align: center;">Qualitative Results</h2>
-        <h3 class="title is-4" style="text-align: center;">Comparison between available synthetic datasets</h2>
-            <div class="columns is-centered has-text-centered">
-                <div class="column is-four-fifths">
-                    <div class="columns is-centered">
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/synface/01_00001x0.60_(08418)x0.40.jpg" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">SynFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/synface/02_00001x0.50_(09743)x0.50.jpg" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">SynFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/synface/03_00001x0.55_(04875)x0.45.jpg" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">SynFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/synface/04_00001x0.35_(07526)x0.65.jpg" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">SynFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/synface/05_00001x0.75_(08127)x0.25.jpg" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">SynFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/synface/06_00001x0.05_(04122)x0.95.jpg" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">SynFace</p>
+        <h3 class="title is-4" style="text-align: center;">Comparison between available synthetic datasets</h3>
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+
+                <!-- Row 1: SynFace -->
+                <div class="columns is-centered">
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/synface/01_00001x0.60_(08418)x0.40.jpg" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">SynFace</div>
                         </div>
                     </div>
-
-                    <div class="columns is-centered">
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/sface/000000.png" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">SFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/sface/000001.png" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">SFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/sface/000002.png" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">SFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/sface/000003.png" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">SFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/sface/000004.png" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">SFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/sface/000005.png" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">SFace</p>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/synface/02_00001x0.50_(09743)x0.50.jpg" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">SynFace</div>
                         </div>
                     </div>
-
-                    <div class="columns is-centered">
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/digiface/0.png" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">DigiFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/digiface/1.png" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">DigiFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/digiface/2.png" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">DigiFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/digiface/3.png" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">DigiFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/digiface/4.png" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">DigiFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/digiface/5.png" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">DigiFace</p>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/synface/03_00001x0.55_(04875)x0.45.jpg" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">SynFace</div>
                         </div>
                     </div>
-
-                    <div class="columns is-centered">
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/idiff-face/0_0.png" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">DigiFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/idiff-face/0_1.png" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">DigiFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/idiff-face/0_2.png" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">DigiFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/idiff-face/0_3.png" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">DigiFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/idiff-face/0_4.png" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">DigiFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/idiff-face/0_5.png" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">DigiFace</p>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/synface/04_00001x0.35_(07526)x0.65.jpg" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">SynFace</div>
                         </div>
                     </div>
-
-                    <div class="columns is-centered">
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/dcface/0.jpg" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">DCFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/dcface/1.jpg" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">DCFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/dcface/2.jpg" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">DCFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/dcface/3.jpg" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">DCFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/dcface/4.jpg" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">DCFace</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/dcface/5.jpg" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">DCFace</p>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/synface/05_00001x0.75_(08127)x0.25.jpg" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">SynFace</div>
                         </div>
                     </div>
-
-                    <div class="columns is-centered">
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/hsface10k/003.jpg" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">HSFace10k</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/hsface10k/004.jpg" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">HSFace10k</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/hsface10k/005.jpg" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">HSFace10k</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/hsface10k/007.jpg" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">HSFace10k</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/hsface10k/010.jpg" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">HSFace10k</p>
-                        </div>
-                        <div class= "column is-2" style="padding: 1px;">
-                            <img src="./static/assets/visual_com/hsface10k/011.jpg" class="interpolation-image"
-                                alt="Interpolate start reference image." />
-                            <p style="text-align: center;">HSFace10k</p>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/synface/06_00001x0.05_(04122)x0.95.jpg" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">SynFace</div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Row 2: SFace -->
+                <div class="columns is-centered">
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/sface/000000.png" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">SFace</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/sface/000001.png" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">SFace</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/sface/000002.png" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">SFace</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/sface/000003.png" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">SFace</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/sface/000004.png" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">SFace</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/sface/000005.png" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">SFace</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3: DigiFace -->
+                <div class="columns is-centered">
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/digiface/0.png" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">DigiFace</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/digiface/1.png" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">DigiFace</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/digiface/2.png" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">DigiFace</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/digiface/3.png" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">DigiFace</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/digiface/4.png" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">DigiFace</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/digiface/5.png" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">DigiFace</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 4: iDiff-Face -->
+                <div class="columns is-centered">
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/idiff-face/0_0.png" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">DigiFace</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/idiff-face/0_1.png" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">DigiFace</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/idiff-face/0_2.png" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">DigiFace</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/idiff-face/0_3.png" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">DigiFace</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/idiff-face/0_4.png" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">DigiFace</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/idiff-face/0_5.png" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">DigiFace</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 5: DCFace -->
+                <div class="columns is-centered">
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/dcface/0.jpg" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">DCFace</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/dcface/1.jpg" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">DCFace</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/dcface/2.jpg" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">DCFace</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/dcface/3.jpg" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">DCFace</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/dcface/4.jpg" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">DCFace</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/dcface/5.jpg" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">DCFace</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 6: HSFace10k -->
+                <div class="columns is-centered">
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/hsface10k/003.jpg" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">HSFace10k</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/hsface10k/004.jpg" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">HSFace10k</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/hsface10k/005.jpg" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">HSFace10k</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/hsface10k/007.jpg" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">HSFace10k</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/hsface10k/010.jpg" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">HSFace10k</div>
+                        </div>
+                    </div>
+                    <div class="column is-2 has-text-centered" style="padding: 1px; margin: 0;">
+                        <div class="image_container">
+                            <img src="./static/assets/visual_com/hsface10k/011.jpg" class="interpolation-image" alt="Interpolate start reference image." />
+                            <div class="caption">HSFace10k</div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+        </div>
+
 
             <br>
 
