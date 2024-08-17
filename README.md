@@ -1,4 +1,4 @@
-# Step-aware Preference Optimization: Aligning Preference with Denoising Performance at Each Step
+# Vec2Face: Scaling Face Dataset Generation with Loosely Constrained Vectors
 
 This paper studies how to synthesize face images that allow for effective training of face recognition models, in response to legal constraints in this field. 
 To synthesize such training data, identity generation and facial attribute augmentation are two useful strategies to increase inter-class separability and increase intra-class variations, two beneficial factors widely acknowledged by the community. However, existing works 1) are typically limited in generating well separable different identities and 2) either neglect or use a separate editing model for attribute augmentation. 
