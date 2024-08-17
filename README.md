@@ -7,4 +7,4 @@ In this work, we propose Vec2Face, a single model that only uses a vector as inp
 
 Vec2Face allows us to efficiently synthesize as many as 
 200K identities with 10 million images without observing the accuracy saturation.
-Face recognition models trained with the resulting datasets achieve the state-of-the-art performance, with the accuracy on CALFW test set being the first higher than the same-scale real dataset. Code link: \url{https://haiyuwu.github.io/facegpt.github.io/}
+Face recognition models trained with the resulting datasets achieve the state-of-the-art performance, with the accuracy on CALFW test set being the first higher than the same-scale real dataset.
