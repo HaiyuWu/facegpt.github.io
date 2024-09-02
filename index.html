@@ -546,33 +546,32 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            This paper studies how to synthesize face images that allow for effective training of face
-                            recognition models, in response to legal constraints in this field. To synthesize such
-                            training data, identity generation and facial attribute augmentation are two useful
-                            strategies to increase inter-class separability and increase intra-class variations, two
-                            beneficial factors widely acknowledged by the community. However, existing works 1) are
-                            typically limited in generating well separable different identities and 2) either neglect or
-                            use a separate editing model for attribute augmentation.
+                            This paper studies how to synthesize face images of non-existent persons, to create a
+                            dataset that allows effective training of face recognition models. Two important goals are
+                            (1) the ability to generate a large number of distinct identities (inter-class separation)
+                            with (2) a wide variation in appearance of each identity (intra-class variation). However,
+                            existing works 1) are typically limited in how many well-separated identities can be
+                            generated and 2) either neglect or use a separate editing model for attribute augmentation.
+                        </p>
+                        <p>
+                            We propose Vec2Face, a holistic model that uses only a sampled vector as input and can
+                            flexibly generate and control face images and their attributes. Composed of a feature
+                            masked autoencoder and a decoder, Vec2Face is supervised by face image reconstruction and
+                            can be conveniently used in inference. Using vectors with low similarity among themselves
+                            as inputs, Vec2Face generates well-separated identities. Randomly perturbing an input
+                            identity vector within a small range allows Vec2Face to generate faces of the same identity
+                            with robust variation in face attributes. It is also possible to generate images with
+                            designated attributes by adjusting vector values with a gradient descent method.
 
                         </p>
                         <p>
-                            In this work, we propose Vec2Face, a single model that only uses a vector as input and can
-                            flexibly generate and control face images and their attributes. Composed of a modified
-                            masked autoencoder and an image decoder, Vec2Face is supervised by face image reconstruction
-                            and can be conveniently used in inference. Specifically, using vectors with low similarities
-                            among themselves as inputs, Vec2Face generates well-separable identities; randomly
-                            perturbing an input vector within a reasonable range allows Vec2Face to generate faces of
-                            the same identity but with robust variations in face attributes; it is also possible to
-                            generate images with designated attribute by adjusting vector values with a gradient descent
-                            based method. Therefore, high inter-class separability and intra-class variations are
-                            achieved using a single model.
-
-                        </p>
-                        <p>
-                            Vec2Face allows us to efficiently synthesize as many as 200K identities with 10 million
-                            images without observing the accuracy saturation. Face recognition models trained with the
-                            resulting datasets achieve the state-of-the-art performance, with the accuracy on CALFW test
-                            set being the first higher than the same-scale real dataset.
+                            Vec2Face has efficiently synthesized as many as 200K identities with 10 million total images,
+                            whereas 60K is the largest number of identities created in the previous works.
+                            Face recognition models trained with the generated HSFace datasets, from 10k to 200k
+                            identities, achieve state-of-the-art accuracy, from 92\% to 93.22\%, on five real-world test
+                            sets. For the first time, our model created using a synthetic training set achieves higher
+                            accuracy than the model created using a same-scale training set of real face images (on the
+                            CALFW test set).
 
                         </p>
                     </div>
