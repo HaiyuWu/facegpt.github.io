@@ -745,6 +745,96 @@
                         </tr>
                     </table>
                 </div>
+
+                <div class="table-container">
+                    <table>
+                        <caption>Dataset scaling effect on face recognition accuracy.</caption>
+                        <tr>
+                            <th>Datasets</th>
+                            <th># images</th>
+                            <th>LFW</th>
+                            <th>CFP-FP</th>
+                            <th>CPLFW</th>
+                            <th>AgeDB</th>
+                            <th>CALFW</th>
+                            <th>Avg.</th>
+                        </tr>
+                        <tr>
+                            <td>HSFace10k</td>
+                            <td>0.5M</td>
+                            <td>98.87</td>
+                            <td>88.97</td>
+                            <td>85.47</td>
+                            <td>93.12</td>
+                            <td>93.57</td>
+                            <td>92.00</td>
+                        </tr>
+                        <tr>
+                            <td>HSFace20k</td>
+                            <td>1M</td>
+                            <td>98.87</td>
+                            <td>89.87</td>
+                            <td>86.13</td>
+                            <td>93.85</td>
+                            <td>93.65</td>
+                            <td>92.47</td>
+                        </tr>
+                        <tr>
+                            <td>HSFace100k</td>
+                            <td>5M</td>
+                            <td>99.25</td>
+                            <td>90.36</td>
+                            <td>86.75</td>
+                            <td>94.38</td>
+                            <td>94.12</td>
+                            <td>92.97</td>
+                        </tr>
+                        <tr>
+                            <td>HSFace200K</td>
+                            <td>10M</td>
+                            <td>99.23</td>
+                            <td>90.81</td>
+                            <td>87.30</td>
+                            <td>94.22</td>
+                            <td>94.52</td>
+                            <td>93.22</td>
+                        </tr>
+                        <tr>
+                            <td>HSFace300K</td>
+                            <td>15M</td>
+                            <td>99.30</td>
+                            <td>91.54</td>
+                            <td>87.70</td>
+                            <td>94.45</td>
+                            <td>94.58</td>
+                            <td>93.52</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" style="border-bottom: 1px solid black;"></td> <!-- Horizontal line -->
+                        </tr>
+                        <tr>
+                            <td >CASIA-WebFace (Real)</td> <!-- Merge this cell with the next one -->
+                            <td>0.49M</td>
+                            <td>99.38</td>
+                            <td>96.91</td>
+                            <td>89.78</td>
+                            <td>94.50</td>
+                            <td>93.35</td>
+                            <td>94.79</td>
+                        </tr>
+                        <tr>
+                            <td >CASIA-WebFace + HSFace10K</td> <!-- Merge this cell with the next one -->
+                            <td>0.99M</td>
+                            <td class="bold">99.58</td>
+                            <td class="bold">97.06</td>
+                            <td class="bold">90.58</td>
+                            <td class="bold">95.62</td>
+                            <td class="bold">94.67</td>
+                            <td class="bold">95.50</td>
+                        </tr>
+                    </table>
+                </div>
+
                 <div class="table-container">
                     <table>
                         <caption>Additional intra-class separability (Hadrian and Eclipse) and similar-looking (SLLFW and DoppelVer) test </caption>
@@ -771,7 +861,7 @@
                         </tr>
                         <tr>
                             <td>HSFace100k</td>
-                            <td>80.00</td>
+                            <td class="bold">80.00</td>
                             <td>70.35</td>
                             <td>95.58</td>
                             <td>90.38</td>
@@ -782,6 +872,13 @@
                             <td class="bold">71.12</td>
                             <td>95.70</td>
                             <td>89.86</td>
+                        </tr>
+                        <tr>
+                            <td>HSFace300K</td>
+                            <td class="bold">81.55</td>
+                            <td class="bold">71.35</td>
+                            <td>95.95</td>
+                            <td>90.49</td>
                         </tr>
                         <tr>
                             <td colspan="6" style="border-bottom: 1px solid black;"></td> <!-- Horizontal line -->
