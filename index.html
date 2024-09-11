@@ -149,6 +149,18 @@
             margin-bottom: 20px;
         }
 
+        .video-wrapper {
+          border: 10px solid black; /* Adjust the width as needed */
+          display: inline-block; /* This ensures the border wraps tightly around the video */
+          line-height: 0; /* Removes any extra space below the video */
+        }
+
+        #teaser {
+          display: block; /* Ensures the video fills the wrapper */
+          max-width: 100%; /* Makes sure the video doesn't overflow its container */
+          height: auto; /* Maintains aspect ratio */
+        }
+
         table {
             border-collapse: collapse;
             width: 48%;
@@ -261,10 +273,11 @@
     <section class="hero teaser">
       <div class="container is-max-desktop">
         <div class="hero-body">
-          <video id="teaser" autoplay muted loop playsinline height="100%">
-            <source src="./static/assets/videos/teaser.mp4"
-                    type="video/mp4">
-          </video>
+          <div class="video-wrapper">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="./static/assets/videos/teaser.mp4" type="video/mp4">
+              </video>
+          </div>
           <h2 class="subtitle has-text-centered">
             <span class="dnerf">Vec2Face</span> generates unlimited number of well-separated identities from feature space and can boost any face task up (e.g., face recognition).
           </h2>
